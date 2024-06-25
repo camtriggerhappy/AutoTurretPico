@@ -7,8 +7,10 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
 pico_sdk_init()
+INCLUDE_DIRECTORIES(../micro_ros_raspberrypi_pico_sdk/libmicroros/include)
 
 link_directories(../micro_ros_raspberrypi_pico_sdk/libmicroros)
+link_directories(../micro_ros_raspberrypi_pico_sdk/libmicroros/*)
 add_executable(turret
     turretMainLoop.cpp
     turretMainLoop.hpp
