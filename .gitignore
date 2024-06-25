@@ -33,7 +33,6 @@
 CMakeFiles/*
 elf2uf2/*
 build/*
-
 CMakeCache.txt
 turret.bin
 turret.elf
