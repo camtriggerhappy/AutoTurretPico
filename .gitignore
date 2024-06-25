@@ -32,3 +32,12 @@
 *.app
 CMakeFiles/*
 elf2uf2/*
+build/*
+
+CMakeCache.txt
+turret.bin
+turret.elf
+turret.elf.map
+turret.hex
+turret.uf2
+pioasm/CMakeFiles/Makefile.cmake
