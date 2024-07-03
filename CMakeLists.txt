@@ -7,17 +7,24 @@ set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
 pico_sdk_init()
-INCLUDE_DIRECTORIES(../micro_ros_raspberrypi_pico_sdk/libmicroros/include)
+INCLUDE_DIRECTORIES(libmicroros/include)
 
-link_directories(../micro_ros_raspberrypi_pico_sdk/libmicroros)
-link_directories(../micro_ros_raspberrypi_pico_sdk/libmicroros/*)
+link_directories(libmicroros)
+#this section allows clock_gettime to work on the pico
+add_library(customTime clockFix.c clockFix.h )
+target_link_libraries(customTime 
+pico_stdlib)
+#this section allows clock_gettime to work on the pico
 add_executable(turret
-    turretMainLoop.cpp
     turretMainLoop.hpp
+    turretMainLoop.cpp
 )
+
 target_link_libraries(turret
     pico_stdlib
     microros
+    customTime
+    
 )
 
 target_include_directories(turret PRIVATE

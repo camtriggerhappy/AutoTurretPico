@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named customTime
+
+# Build rule for target.
+customTime: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 customTime
+.PHONY : customTime
+
+# fast build rule for target.
+customTime/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/build
+.PHONY : customTime/fast
+
+#=============================================================================
 # Target rules for targets named turret
 
 # Build rule for target.
@@ -232,6 +245,30 @@ cyw43_driver_picow_cyw43_bus_pio_spi_pio_h: cmake_check_build_system
 cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast:
 	$(MAKE) $(MAKESILENT) -f pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build.make pico-sdk/src/rp2_common/pico_cyw43_driver/CMakeFiles/cyw43_driver_picow_cyw43_bus_pio_spi_pio_h.dir/build
 .PHONY : cyw43_driver_picow_cyw43_bus_pio_spi_pio_h/fast
+
+clockFix.obj: clockFix.c.obj
+.PHONY : clockFix.obj
+
+# target to build an object file
+clockFix.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/clockFix.c.obj
+.PHONY : clockFix.c.obj
+
+clockFix.i: clockFix.c.i
+.PHONY : clockFix.i
+
+# target to preprocess a source file
+clockFix.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/clockFix.c.i
+.PHONY : clockFix.c.i
+
+clockFix.s: clockFix.c.s
+.PHONY : clockFix.s
+
+# target to generate assembly for a file
+clockFix.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/clockFix.c.s
+.PHONY : clockFix.c.s
 
 home/cameron/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj: home/cameron/pico-sdk/lib/tinyusb/src/class/audio/audio_device.c.obj
 .PHONY : home/cameron/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj
@@ -694,6 +731,7 @@ home/cameron/pico-sdk/src/common/pico_sync/critical_section.obj: home/cameron/pi
 
 # target to build an object file
 home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.obj
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.obj
 
@@ -702,6 +740,7 @@ home/cameron/pico-sdk/src/common/pico_sync/critical_section.i: home/cameron/pico
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.i
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.i
 
@@ -710,6 +749,7 @@ home/cameron/pico-sdk/src/common/pico_sync/critical_section.s: home/cameron/pico
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.s
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/critical_section.c.s
 
@@ -718,6 +758,7 @@ home/cameron/pico-sdk/src/common/pico_sync/lock_core.obj: home/cameron/pico-sdk/
 
 # target to build an object file
 home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.obj
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.obj
 
@@ -726,6 +767,7 @@ home/cameron/pico-sdk/src/common/pico_sync/lock_core.i: home/cameron/pico-sdk/sr
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.i
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.i
 
@@ -734,6 +776,7 @@ home/cameron/pico-sdk/src/common/pico_sync/lock_core.s: home/cameron/pico-sdk/sr
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.s
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/lock_core.c.s
 
@@ -742,6 +785,7 @@ home/cameron/pico-sdk/src/common/pico_sync/mutex.obj: home/cameron/pico-sdk/src/
 
 # target to build an object file
 home/cameron/pico-sdk/src/common/pico_sync/mutex.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/mutex.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/mutex.c.obj
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/mutex.c.obj
 
@@ -750,6 +794,7 @@ home/cameron/pico-sdk/src/common/pico_sync/mutex.i: home/cameron/pico-sdk/src/co
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/common/pico_sync/mutex.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/mutex.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/mutex.c.i
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/mutex.c.i
 
@@ -758,6 +803,7 @@ home/cameron/pico-sdk/src/common/pico_sync/mutex.s: home/cameron/pico-sdk/src/co
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/common/pico_sync/mutex.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/mutex.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/mutex.c.s
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/mutex.c.s
 
@@ -766,6 +812,7 @@ home/cameron/pico-sdk/src/common/pico_sync/sem.obj: home/cameron/pico-sdk/src/co
 
 # target to build an object file
 home/cameron/pico-sdk/src/common/pico_sync/sem.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/sem.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/sem.c.obj
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/sem.c.obj
 
@@ -774,6 +821,7 @@ home/cameron/pico-sdk/src/common/pico_sync/sem.i: home/cameron/pico-sdk/src/comm
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/common/pico_sync/sem.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/sem.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/sem.c.i
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/sem.c.i
 
@@ -782,6 +830,7 @@ home/cameron/pico-sdk/src/common/pico_sync/sem.s: home/cameron/pico-sdk/src/comm
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/common/pico_sync/sem.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_sync/sem.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_sync/sem.c.s
 .PHONY : home/cameron/pico-sdk/src/common/pico_sync/sem.c.s
 
@@ -790,6 +839,7 @@ home/cameron/pico-sdk/src/common/pico_time/time.obj: home/cameron/pico-sdk/src/c
 
 # target to build an object file
 home/cameron/pico-sdk/src/common/pico_time/time.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_time/time.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_time/time.c.obj
 .PHONY : home/cameron/pico-sdk/src/common/pico_time/time.c.obj
 
@@ -798,6 +848,7 @@ home/cameron/pico-sdk/src/common/pico_time/time.i: home/cameron/pico-sdk/src/com
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/common/pico_time/time.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_time/time.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_time/time.c.i
 .PHONY : home/cameron/pico-sdk/src/common/pico_time/time.c.i
 
@@ -806,6 +857,7 @@ home/cameron/pico-sdk/src/common/pico_time/time.s: home/cameron/pico-sdk/src/com
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/common/pico_time/time.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_time/time.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_time/time.c.s
 .PHONY : home/cameron/pico-sdk/src/common/pico_time/time.c.s
 
@@ -814,6 +866,7 @@ home/cameron/pico-sdk/src/common/pico_time/timeout_helper.obj: home/cameron/pico
 
 # target to build an object file
 home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 .PHONY : home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.obj
 
@@ -822,6 +875,7 @@ home/cameron/pico-sdk/src/common/pico_time/timeout_helper.i: home/cameron/pico-s
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.i
 .PHONY : home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.i
 
@@ -830,6 +884,7 @@ home/cameron/pico-sdk/src/common/pico_time/timeout_helper.s: home/cameron/pico-s
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.s
 .PHONY : home/cameron/pico-sdk/src/common/pico_time/timeout_helper.c.s
 
@@ -838,6 +893,7 @@ home/cameron/pico-sdk/src/common/pico_util/datetime.obj: home/cameron/pico-sdk/s
 
 # target to build an object file
 home/cameron/pico-sdk/src/common/pico_util/datetime.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_util/datetime.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_util/datetime.c.obj
 .PHONY : home/cameron/pico-sdk/src/common/pico_util/datetime.c.obj
 
@@ -846,6 +902,7 @@ home/cameron/pico-sdk/src/common/pico_util/datetime.i: home/cameron/pico-sdk/src
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/common/pico_util/datetime.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_util/datetime.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_util/datetime.c.i
 .PHONY : home/cameron/pico-sdk/src/common/pico_util/datetime.c.i
 
@@ -854,6 +911,7 @@ home/cameron/pico-sdk/src/common/pico_util/datetime.s: home/cameron/pico-sdk/src
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/common/pico_util/datetime.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_util/datetime.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_util/datetime.c.s
 .PHONY : home/cameron/pico-sdk/src/common/pico_util/datetime.c.s
 
@@ -862,6 +920,7 @@ home/cameron/pico-sdk/src/common/pico_util/pheap.obj: home/cameron/pico-sdk/src/
 
 # target to build an object file
 home/cameron/pico-sdk/src/common/pico_util/pheap.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_util/pheap.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_util/pheap.c.obj
 .PHONY : home/cameron/pico-sdk/src/common/pico_util/pheap.c.obj
 
@@ -870,6 +929,7 @@ home/cameron/pico-sdk/src/common/pico_util/pheap.i: home/cameron/pico-sdk/src/co
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/common/pico_util/pheap.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_util/pheap.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_util/pheap.c.i
 .PHONY : home/cameron/pico-sdk/src/common/pico_util/pheap.c.i
 
@@ -878,6 +938,7 @@ home/cameron/pico-sdk/src/common/pico_util/pheap.s: home/cameron/pico-sdk/src/co
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/common/pico_util/pheap.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_util/pheap.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_util/pheap.c.s
 .PHONY : home/cameron/pico-sdk/src/common/pico_util/pheap.c.s
 
@@ -886,6 +947,7 @@ home/cameron/pico-sdk/src/common/pico_util/queue.obj: home/cameron/pico-sdk/src/
 
 # target to build an object file
 home/cameron/pico-sdk/src/common/pico_util/queue.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_util/queue.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_util/queue.c.obj
 .PHONY : home/cameron/pico-sdk/src/common/pico_util/queue.c.obj
 
@@ -894,6 +956,7 @@ home/cameron/pico-sdk/src/common/pico_util/queue.i: home/cameron/pico-sdk/src/co
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/common/pico_util/queue.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_util/queue.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_util/queue.c.i
 .PHONY : home/cameron/pico-sdk/src/common/pico_util/queue.c.i
 
@@ -902,6 +965,7 @@ home/cameron/pico-sdk/src/common/pico_util/queue.s: home/cameron/pico-sdk/src/co
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/common/pico_util/queue.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/common/pico_util/queue.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/common/pico_util/queue.c.s
 .PHONY : home/cameron/pico-sdk/src/common/pico_util/queue.c.s
 
@@ -910,6 +974,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.obj: home/cameron/pico
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.obj
 
@@ -918,6 +983,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.i: home/cameron/pico-s
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.i
 
@@ -926,6 +992,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.s: home/cameron/pico-s
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_claim/claim.c.s
 
@@ -934,6 +1001,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.obj: home/cameron/pi
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.obj
 
@@ -942,6 +1010,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.i: home/cameron/pico
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.i
 
@@ -950,6 +1019,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.s: home/cameron/pico
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_clocks/clocks.c.s
 
@@ -958,6 +1028,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_divider/divider.obj: home/cameron/
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_divider/divider.S.obj
 
@@ -990,6 +1061,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.obj: home/cameron/pico-s
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.obj
 
@@ -998,6 +1070,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.i: home/cameron/pico-sdk
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.i
 
@@ -1006,6 +1079,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.s: home/cameron/pico-sdk
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_gpio/gpio.c.s
 
@@ -1014,6 +1088,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.obj: home/cameron/pico-sdk
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.obj
 
@@ -1022,6 +1097,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.i: home/cameron/pico-sdk/s
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.i
 
@@ -1030,6 +1106,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.s: home/cameron/pico-sdk/s
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq.c.s
 
@@ -1038,6 +1115,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.obj: home/ca
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_irq/irq_handler_chain.S.obj
 
@@ -1046,6 +1124,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.obj: home/cameron/pico-sdk
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.obj
 
@@ -1054,6 +1133,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.i: home/cameron/pico-sdk/s
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.i
 
@@ -1062,6 +1142,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.s: home/cameron/pico-sdk/s
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_pll/pll.c.s
 
@@ -1070,6 +1151,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.obj: home/cameron/pico-s
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.obj
 
@@ -1078,6 +1160,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.i: home/cameron/pico-sdk
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.i
 
@@ -1086,6 +1169,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.s: home/cameron/pico-sdk
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_sync/sync.c.s
 
@@ -1094,6 +1178,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.obj: home/cameron/pico
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.obj
 
@@ -1102,6 +1187,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.i: home/cameron/pico-s
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.i
 
@@ -1110,6 +1196,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.s: home/cameron/pico-s
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_timer/timer.c.s
 
@@ -1118,6 +1205,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.obj: home/cameron/pico-s
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.obj
 
@@ -1126,6 +1214,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.i: home/cameron/pico-sdk
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.i
 
@@ -1134,6 +1223,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.s: home/cameron/pico-sdk
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_uart/uart.c.s
 
@@ -1142,6 +1232,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.obj: home/cameron/pico-s
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.obj
 
@@ -1150,6 +1241,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.i: home/cameron/pico-sdk
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.i
 
@@ -1158,6 +1250,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.s: home/cameron/pico-sdk
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_vreg/vreg.c.s
 
@@ -1166,6 +1259,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.obj: home/camero
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.obj
 
@@ -1174,6 +1268,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.i: home/cameron/
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.i
 
@@ -1182,6 +1277,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.s: home/cameron/
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_watchdog/watchdog.c.s
 
@@ -1190,6 +1286,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.obj: home/cameron/pico-s
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.obj
 
@@ -1198,6 +1295,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.i: home/cameron/pico-sdk
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.i
 
@@ -1206,6 +1304,7 @@ home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.s: home/cameron/pico-sdk
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/hardware_xosc/xosc.c.s
 
@@ -1214,6 +1313,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.obj: home/camero
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_bit_ops/bit_ops_aeabi.S.obj
 
@@ -1222,6 +1322,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.obj: home/cameron/pico
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.obj
 
@@ -1230,6 +1331,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.i: home/cameron/pico-s
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.i
 
@@ -1238,6 +1340,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.s: home/cameron/pico-s
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_bootrom/bootrom.c.s
 
@@ -1246,6 +1349,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_divider/divider.obj: home/cameron/pico
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_divider/divider.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_divider/divider.S.obj
 
@@ -1254,6 +1358,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_double/double_aeabi.obj: home/cameron/
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_double/double_aeabi.S.obj
 
@@ -1262,6 +1367,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.obj: home/camer
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.obj
 
@@ -1270,6 +1376,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.i: home/cameron
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.i
 
@@ -1278,6 +1385,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.s: home/cameron
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_double/double_init_rom.c.s
 
@@ -1286,6 +1394,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.obj: home/cameron/p
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.obj
 
@@ -1294,6 +1403,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.i: home/cameron/pic
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.i
 
@@ -1302,6 +1412,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.s: home/cameron/pic
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_double/double_math.c.s
 
@@ -1310,6 +1421,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.obj: home/ca
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_double/double_v1_rom_shim.S.obj
 
@@ -1342,6 +1454,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_float/float_aeabi.obj: home/cameron/pi
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_float/float_aeabi.S.obj
 
@@ -1350,6 +1463,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.obj: home/cameron
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.obj
 
@@ -1358,6 +1472,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.i: home/cameron/p
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.i
 
@@ -1366,6 +1481,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.s: home/cameron/p
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_float/float_init_rom.c.s
 
@@ -1374,6 +1490,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.obj: home/cameron/pic
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.obj
 
@@ -1382,6 +1499,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.i: home/cameron/pico-
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.i
 
@@ -1390,6 +1508,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.s: home/cameron/pico-
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_float/float_math.c.s
 
@@ -1398,6 +1517,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.obj: home/came
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_float/float_v1_rom_shim.S.obj
 
@@ -1406,6 +1526,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.obj: ho
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_int64_ops/pico_int64_ops_aeabi.S.obj
 
@@ -1414,6 +1535,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.obj: home/cameron/p
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.obj
 
@@ -1422,6 +1544,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.i: home/cameron/pic
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.i
 
@@ -1430,6 +1553,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.s: home/cameron/pic
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_malloc/pico_malloc.c.s
 
@@ -1438,6 +1562,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.obj: home/camero
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_mem_ops/mem_ops_aeabi.S.obj
 
@@ -1446,6 +1571,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.obj: home/cameron/pi
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.obj
 
@@ -1454,6 +1580,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.i: home/cameron/pico
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.i
 
@@ -1462,6 +1589,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.s: home/cameron/pico
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_platform/platform.c.s
 
@@ -1470,6 +1598,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.obj: home/cameron/pico-s
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.obj
 
@@ -1478,6 +1607,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.i: home/cameron/pico-sdk
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.i
 
@@ -1486,6 +1616,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.s: home/cameron/pico-sdk
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_printf/printf.c.s
 
@@ -1494,6 +1625,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.obj: home/cameron/pico
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.obj
 
@@ -1502,6 +1634,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.i: home/cameron/pico-s
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.i
 
@@ -1510,6 +1643,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.s: home/cameron/pico-s
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_runtime/runtime.c.s
 
@@ -1518,6 +1652,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.obj: home/ca
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.obj
 
@@ -1526,6 +1661,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.i: home/came
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.i
 
@@ -1534,6 +1670,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.s: home/came
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_standard_link/binary_info.c.s
 
@@ -1542,6 +1679,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_standard_link/crt0.obj: home/cameron/p
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_standard_link/crt0.S.obj
 
@@ -1550,6 +1688,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.obj: home/cam
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.obj
 
@@ -1558,6 +1697,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.i: home/camer
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.i
 
@@ -1566,6 +1706,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.s: home/camer
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_standard_link/new_delete.cpp.s
 
@@ -1574,6 +1715,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.obj: home/cameron/pico-sdk
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.obj
 
@@ -1582,6 +1724,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.i: home/cameron/pico-sdk/s
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.i
 
@@ -1590,8 +1733,33 @@ home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.s: home/cameron/pico-sdk/s
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.c.s
+
+home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj: home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+.PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj
+
+# target to build an object file
+home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+.PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.obj
+
+home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i: home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+.PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i
+
+# target to preprocess a source file
+home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+.PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.i
+
+home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s: home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
+.PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s
+
+# target to generate assembly for a file
+home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
+.PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.c.s
 
 home/cameron/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj: home/cameron/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj
@@ -1670,6 +1838,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.obj: home/cameron/pico-s
 
 # target to build an object file
 home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.obj
 
@@ -1678,6 +1847,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.i: home/cameron/pico-sdk
 
 # target to preprocess a source file
 home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.i
 
@@ -1686,6 +1856,7 @@ home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.s: home/cameron/pico-sdk
 
 # target to generate assembly for a file
 home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/customTime.dir/build.make CMakeFiles/customTime.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/turret.dir/build.make CMakeFiles/turret.dir/home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 .PHONY : home/cameron/pico-sdk/src/rp2_common/pico_stdlib/stdlib.c.s
 
@@ -1753,7 +1924,11 @@ help:
 	@echo "... tinyusb_pico_pio_usb_usb_rx_pio_h"
 	@echo "... tinyusb_pico_pio_usb_usb_tx_pio_h"
 	@echo "... bs2_default"
+	@echo "... customTime"
 	@echo "... turret"
+	@echo "... clockFix.obj"
+	@echo "... clockFix.i"
+	@echo "... clockFix.s"
 	@echo "... home/cameron/pico-sdk/lib/tinyusb/src/class/audio/audio_device.obj"
 	@echo "... home/cameron/pico-sdk/lib/tinyusb/src/class/audio/audio_device.i"
 	@echo "... home/cameron/pico-sdk/lib/tinyusb/src/class/audio/audio_device.s"
@@ -1924,6 +2099,9 @@ help:
 	@echo "... home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.obj"
 	@echo "... home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.i"
 	@echo "... home/cameron/pico-sdk/src/rp2_common/pico_stdio/stdio.s"
+	@echo "... home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.obj"
+	@echo "... home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.i"
+	@echo "... home/cameron/pico-sdk/src/rp2_common/pico_stdio_uart/stdio_uart.s"
 	@echo "... home/cameron/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.obj"
 	@echo "... home/cameron/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.i"
 	@echo "... home/cameron/pico-sdk/src/rp2_common/pico_stdio_usb/reset_interface.s"
