@@ -60,6 +60,7 @@ int main()
     rclc_support_init(&support, 0, NULL, &allocator);
 
     rcl_timer_t timer;
+    rclc_timer_init_default(&timer, &support, 100000, &timer_callback);
 
     //the actual node
     rcl_node_t node;
