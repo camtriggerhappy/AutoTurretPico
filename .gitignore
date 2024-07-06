@@ -40,7 +40,6 @@ turret.elf.map
 turret.hex
 turret.uf2
 pioasm/CMakeFiles/Makefile.cmake
-libmicroros/*
 Makefile
 CMakeCache.txt
 .vscode/c_cpp_properties.json
