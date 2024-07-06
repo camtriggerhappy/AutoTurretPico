@@ -4,17 +4,10 @@
 #include <pico/types.h>
 #include <pico/time.h>
 
-
-int clock_gettime(clockid_t clock_id, struct timespec *tp)
+int clock_gettime(clockid_t unused, struct timespec *tp)
 {
-  (void) clock_id;
-
-  uint64_t microseconds_elapsed = to_us_since_boot(get_absolute_time());
-
-  // Handle here possible rollovers of your platform timers if required.
-
-  tp->tv_sec = microseconds_elapsed / (10^6);
-  tp->tv_nsec = (microseconds_elapsed % (10^6)) * (10^3);
-
-  return 0;
+    uint64_t m = time_us_64();
+    tp->tv_sec = m / 1000000;
+    tp->tv_nsec = (m % 1000000) * 1000;
+    return 0;
 }
