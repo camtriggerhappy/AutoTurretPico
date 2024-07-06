@@ -8,8 +8,9 @@ set(CMAKE_CXX_STANDARD 17)
 
 pico_sdk_init()
 INCLUDE_DIRECTORIES(libmicroros/include)
+include_directories(${CMAKE_SOURCE_DIR})
+link_directories(${CMAKE_SOURCE_DIR})
 
-link_directories(libmicroros)
 #this section allows clock_gettime to work on the pico
 add_library(customTime clockFix.c clockFix.h )
 target_link_libraries(customTime 
@@ -19,17 +20,17 @@ add_executable(turret
     turretMainLoop.hpp
     turretMainLoop.cpp
 )
+target_include_directories(turret PRIVATE
+    libmicroros/include
+)
 
 target_link_libraries(turret
     pico_stdlib
-    microros
+    ${CMAKE_SOURCE_DIR}/libmicroros.a  # Adjust this line according to the actual library file
     customTime
     
 )
 
-target_include_directories(turret PRIVATE
-    libmicroros/include
-)
 
 SET(CMAKE_C_FLAGS  "${CMAKE_C_FLAGS} -ffunction-sections -fdata-sections")
 SET(CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -ffunction-sections -fdata-sections")
