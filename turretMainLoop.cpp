@@ -20,13 +20,14 @@
 #include <pico_uart_transport.h>
 #include <uxr/client/profile/transport/custom/custom_transport.h>
 
+#define close 1008
+#define open 4208
 
-
-bool pico_serial_transport_open(struct uxrCustomTransport * transport)
+bool pico_serial_transport_open(struct uxrCustomTransport *transport)
 {
     // Ensure that stdio_init_all is only called once on the runtime
     static bool require_init = true;
-    if(require_init)
+    if (require_init)
     {
         stdio_init_all();
         require_init = false;
@@ -35,12 +36,12 @@ bool pico_serial_transport_open(struct uxrCustomTransport * transport)
     return true;
 }
 
-bool pico_serial_transport_close(struct uxrCustomTransport * transport)
+bool pico_serial_transport_close(struct uxrCustomTransport *transport)
 {
     return true;
 }
 
-size_t pico_serial_transport_write(struct uxrCustomTransport * transport, unsigned char const *buf, unsigned int len, unsigned char *errcode)
+size_t pico_serial_transport_write(struct uxrCustomTransport *transport, unsigned char const *buf, unsigned int len, unsigned char *errcode)
 {
     for (size_t i = 0; i < len; i++)
     {
@@ -53,7 +54,7 @@ size_t pico_serial_transport_write(struct uxrCustomTransport * transport, unsign
     return len;
 }
 
-size_t pico_serial_transport_read(struct uxrCustomTransport * transport, uint8_t *buf, size_t len, int timeout, uint8_t *errcode)
+size_t pico_serial_transport_read(struct uxrCustomTransport *transport, uint8_t *buf, size_t len, int timeout, uint8_t *errcode)
 {
     uint64_t start_time_us = time_us_64();
     for (size_t i = 0; i < len; i++)
@@ -76,7 +77,6 @@ size_t pico_serial_transport_read(struct uxrCustomTransport * transport, uint8_t
     return len;
 }
 
-
 // got a lot of help from https://docs.vulcanexus.org/en/humble/rst/microros_documentation/getting_started/getting_started.html
 
 rcl_publisher_t LeftLimitPublisher;
@@ -88,11 +88,51 @@ geometry_msgs__msg__Twist positionMsg;
 struct timespec ts;
 const uint LED_PIN = 25;
 
-
 const char *nodeName = "AutoTurret";
 const char *nodeNameSpace = "";
 
+const uint leftLimitSwitch = 0;
+const uint rightLimitSwitch = 2;
 
+void handleLimit(uint32_t pin, uint32_t openOrClosed)
+{
+
+    switch (pin)
+    {
+    case leftLimitSwitch:
+        leftMsg.data = (openOrClosed == open);
+        rcl_publish(&LeftLimitPublisher, &leftMsg, NULL);
+        break;
+    case rightLimitSwitch:
+        rightMsg.data = (openOrClosed == open);
+        rcl_publish(&RightLimitPublisher, &rightMsg, NULL);
+        break;
+
+    default:
+        // TODO: figure out how to give nice debug messages.
+        break;
+    }
+}
+
+void gpioCallback(unsigned int pin, uint32_t eventmask)
+{
+    if ((leftLimitSwitch == pin) && (0x8u == (eventmask & GPIO_IRQ_EDGE_RISE)))
+    {
+        handleLimit(leftLimitSwitch, close);
+    }
+    else if ((leftLimitSwitch == pin) && (0x4u == (eventmask & GPIO_IRQ_EDGE_FALL)))
+    {
+        handleLimit(leftLimitSwitch, open);
+    }
+    else if ((rightLimitSwitch == pin) && (0x8u == (eventmask & GPIO_IRQ_EDGE_RISE)))
+    {
+        handleLimit(leftLimitSwitch, close);
+    }
+    else if ((rightLimitSwitch == pin) && (0x4u == (eventmask & GPIO_IRQ_EDGE_FALL)))
+    {
+        handleLimit(leftLimitSwitch, open);
+    }
+}
 
 const rosidl_message_type_support_t *LimitPublisherSupport =
     ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Bool); // this just fetches the definition of the message to help publish later
@@ -110,24 +150,28 @@ void timer_callback(rcl_timer_t *timer, int64_t last_call_time)
 
 int main()
 {
-        rmw_uros_set_custom_transport(
-		true,
-		NULL,
-		pico_serial_transport_open,
-		pico_serial_transport_close,
-		pico_serial_transport_write,
-		pico_serial_transport_read
-	);
+    rmw_uros_set_custom_transport(
+        true,
+        NULL,
+        pico_serial_transport_open,
+        pico_serial_transport_close,
+        pico_serial_transport_write,
+        pico_serial_transport_read);
 
-        gpio_init(LED_PIN);
+    gpio_init(LED_PIN);
     gpio_set_dir(LED_PIN, GPIO_OUT);
+    uart_init(uart1, 115200);
+    gpio_set_function(4, GPIO_FUNC_UART);
+    gpio_set_function(5, GPIO_FUNC_UART);
 
 
-    const int timeout_ms = 1000; 
+    while(true) {
+        uart_puts(uart1, "hello world test");
+    }
+    const int timeout_ms = 1000;
     const uint8_t attempts = 120;
 
     rcl_ret_t ret = rmw_uros_ping_agent(timeout_ms, attempts);
-
 
     // I think this just is the thing that allocates all the memory the node will use but I'm unsure
     rcl_allocator_t allocator = rcl_get_default_allocator();
@@ -139,21 +183,21 @@ int main()
     rcl_timer_t timer;
     rclc_timer_init_default(&timer, &support, RCL_MS_TO_NS(1000), &timer_callback);
 
-    //the actual node
+    // the actual node
     rcl_node_t node;
     rclc_node_init_default(&node, nodeName, nodeNameSpace, &support);
-    //don't put a space in the name
+    // don't put a space in the name
     rclc_publisher_init_default(&LeftLimitPublisher, &node, LimitPublisherSupport, "leftLimit");
 
     rclc_executor_t executor;
     const size_t numHandles = 3;
-    rclc_executor_init(&executor, &support.context,1, &allocator );
+    rclc_executor_init(&executor, &support.context, 1, &allocator);
     rclc_executor_add_timer(&executor, &timer);
+
+    gpio_set_irq_enabled_with_callback(leftLimitSwitch, GPIO_IRQ_EDGE_FALL | GPIO_IRQ_EDGE_RISE, true, &gpioCallback);
+    gpio_set_irq_enabled(rightLimitSwitch, GPIO_IRQ_EDGE_FALL | GPIO_IRQ_EDGE_RISE, true);
 
     rclc_executor_spin(&executor);
 
-
     return 1;
-
-
 }
